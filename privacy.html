@@ -12,7 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --bg:      #0a0e14;
       --surface: #111820;
@@ -24,9 +23,7 @@
       --muted:   #6a7f94;
       --faint:   #2a3a4a;
     }
-
     html { scroll-behavior: smooth; }
-
     body {
       background: var(--bg);
       color: var(--text);
@@ -35,8 +32,6 @@
       line-height: 1.7;
       overflow-x: hidden;
     }
-
-    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -50,13 +45,7 @@
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(30,45,61,0.6);
     }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
-
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
     .nav-back {
       display: flex;
       align-items: center;
@@ -67,19 +56,13 @@
       font-weight: 500;
       transition: color 0.2s;
     }
-
     .nav-back:hover { color: var(--text); }
-
-    .nav-back svg { opacity: 0.6; }
-
-    /* ── HERO ── */
     .page-hero {
       padding: 120px 24px 60px;
       max-width: 760px;
       margin: 0 auto;
       border-bottom: 1px solid var(--border);
     }
-
     .page-eyebrow {
       font-size: 11px;
       font-weight: 700;
@@ -88,7 +71,6 @@
       color: var(--blue);
       margin-bottom: 16px;
     }
-
     .page-title {
       font-size: clamp(32px, 6vw, 56px);
       font-weight: 900;
@@ -97,20 +79,8 @@
       color: var(--text);
       margin-bottom: 20px;
     }
-
-    .page-meta {
-      font-size: 14px;
-      color: var(--muted);
-      font-family: 'DM Mono', monospace;
-    }
-
-    /* ── SUMMARY CARD ── */
-    .summary-card {
-      max-width: 760px;
-      margin: 40px auto;
-      padding: 0 24px;
-    }
-
+    .page-meta { font-size: 14px; color: var(--muted); font-family: 'DM Mono', monospace; }
+    .summary-card { max-width: 760px; margin: 40px auto; padding: 0 24px; }
     .summary-inner {
       background: var(--card);
       border: 1px solid var(--border);
@@ -118,7 +88,6 @@
       border-radius: 14px;
       padding: 24px 28px;
     }
-
     .summary-title {
       font-size: 13px;
       font-weight: 700;
@@ -127,14 +96,7 @@
       color: var(--green);
       margin-bottom: 14px;
     }
-
-    .summary-points {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
+    .summary-points { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .summary-points li {
       display: flex;
       align-items: flex-start;
@@ -143,7 +105,6 @@
       color: #a8c8a8;
       line-height: 1.5;
     }
-
     .summary-points li::before {
       content: '✓';
       color: var(--green);
@@ -151,24 +112,9 @@
       flex-shrink: 0;
       margin-top: 1px;
     }
-
-    /* ── CONTENT ── */
-    .content {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0 24px 80px;
-    }
-
-    .section {
-      margin-bottom: 56px;
-      padding-bottom: 56px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .section:last-child {
-      border-bottom: none;
-    }
-
+    .content { max-width: 760px; margin: 0 auto; padding: 0 24px 80px; }
+    .section { margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--border); }
+    .section:last-child { border-bottom: none; }
     .section-number {
       font-family: 'DM Mono', monospace;
       font-size: 11px;
@@ -176,7 +122,6 @@
       letter-spacing: 1px;
       margin-bottom: 8px;
     }
-
     .section-title {
       font-size: 22px;
       font-weight: 900;
@@ -184,16 +129,8 @@
       color: var(--text);
       margin-bottom: 16px;
     }
-
-    .section p {
-      font-size: 15px;
-      color: #8a9fb8;
-      margin-bottom: 14px;
-      line-height: 1.75;
-    }
-
+    .section p { font-size: 15px; color: #8a9fb8; margin-bottom: 14px; line-height: 1.75; }
     .section p:last-child { margin-bottom: 0; }
-
     .section ul, .section ol {
       padding-left: 0;
       list-style: none;
@@ -202,7 +139,6 @@
       flex-direction: column;
       gap: 8px;
     }
-
     .section ul li, .section ol li {
       font-size: 15px;
       color: #8a9fb8;
@@ -210,22 +146,9 @@
       position: relative;
       line-height: 1.65;
     }
-
-    .section ul li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--faint);
-    }
-
-    .section ol {
-      counter-reset: ol-counter;
-    }
-
-    .section ol li {
-      counter-increment: ol-counter;
-    }
-
+    .section ul li::before { content: '—'; position: absolute; left: 0; color: var(--faint); }
+    .section ol { counter-reset: ol-counter; }
+    .section ol li { counter-increment: ol-counter; }
     .section ol li::before {
       content: counter(ol-counter) '.';
       position: absolute;
@@ -234,7 +157,6 @@
       font-family: 'DM Mono', monospace;
       font-size: 12px;
     }
-
     .highlight-box {
       background: var(--card);
       border: 1px solid var(--border);
@@ -242,26 +164,10 @@
       padding: 20px 24px;
       margin: 20px 0;
     }
-
-    .highlight-box p {
-      margin-bottom: 0 !important;
-      color: var(--text) !important;
-      font-size: 14px !important;
-    }
-
-    strong {
-      color: var(--text);
-      font-weight: 700;
-    }
-
-    a {
-      color: var(--blue);
-      text-decoration: none;
-    }
-
+    .highlight-box p { margin-bottom: 0 !important; color: var(--text) !important; font-size: 14px !important; }
+    strong { color: var(--text); font-weight: 700; }
+    a { color: var(--blue); text-decoration: none; }
     a:hover { text-decoration: underline; }
-
-    /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
       padding: 40px 32px;
@@ -271,27 +177,10 @@
       flex-wrap: wrap;
       gap: 16px;
     }
-
-    .footer-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-
-    .footer-links a {
-      font-size: 13px;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--text); }
-
-    .footer-copy {
-      font-size: 12px;
-      color: var(--faint);
-    }
-
+    .footer-copy { font-size: 12px; color: var(--faint); }
     @media (max-width: 768px) {
       nav { padding: 0 20px; }
       .page-hero, .summary-card, .content { padding-left: 20px; padding-right: 20px; }
@@ -301,7 +190,6 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a href="/" class="nav-logo">
       <img src="assets/logo.png" alt="ØKT" style="height:32px;width:auto;display:block;" />
@@ -312,14 +200,12 @@
     </a>
   </nav>
 
-  <!-- HERO -->
   <div class="page-hero">
     <p class="page-eyebrow">Legal</p>
     <h1 class="page-title">Privacy Policy</h1>
     <p class="page-meta">Last updated: June 2026</p>
   </div>
 
-  <!-- SUMMARY -->
   <div class="summary-card">
     <div class="summary-inner">
       <div class="summary-title">The short version</div>
@@ -333,7 +219,6 @@
     </div>
   </div>
 
-  <!-- CONTENT -->
   <div class="content">
 
     <div class="section">
@@ -424,7 +309,6 @@
 
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <img src="assets/logo.png" alt="ØKT" style="height:24px;width:auto;display:block;" />
     <ul class="footer-links">
