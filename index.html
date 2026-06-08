@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ØKT — Ready for the next session</title>
   <meta name="description" content="ØKT is a premium workout logging app built for serious training. Smart timers, progress tracking, and 36 achievements." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -57,10 +59,8 @@
     }
 
     .nav-logo {
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: -0.5px;
-      color: var(--text);
+      display: flex;
+      align-items: center;
       text-decoration: none;
     }
 
@@ -737,7 +737,9 @@
 
   <!-- NAV -->
   <nav>
-    <a href="/" class="nav-logo">ØKT</a>
+    <a href="/" class="nav-logo">
+      <img src="assets/logo.png" alt="ØKT" style="height:32px;width:auto;display:block;" />
+    </a>
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
       <li><a href="#log">History</a></li>
@@ -1015,7 +1017,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">ØKT</div>
+    <img src="assets/logo.png" alt="ØKT" style="height:24px;width:auto;display:block;" />
     <ul class="footer-links">
       <li><a href="#features">Features</a></li>
       <li><a href="#achievements">Achievements</a></li>
