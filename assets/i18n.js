@@ -75,8 +75,8 @@ window.OKT_STRINGS = {
   "f5.d": { en: "Strength volume, cardio distance, and body measurements tracked over time. Weekly goals with streak history.",
             no: "Styrkevolum, kondisjonsdistanse og kroppsmål følges over tid. Ukesmål med rekkehistorikk." },
   "f6.t": { en: "Full exercise library", no: "Komplett øvelsesbibliotek" },
-  "f6.d": { en: "119 exercises across press, pull, leg, core, and cardio. Filter by movement, muscle group, or equipment.",
-            no: "119 øvelser fordelt på press, pull, bein, core og kondisjon. Filtrer på bevegelse, muskelgruppe eller utstyr." },
+  "f6.d": { en: "150+ exercises across press, pull, leg, core, and cardio. Filter by movement, muscle group, or equipment.",
+            no: "150+ øvelser fordelt på press, pull, bein, core og kondisjon. Filtrer på bevegelse, muskelgruppe eller utstyr." },
 
   /* ─── session ─── */
   "sess.eyebrow": { en: "Live session", no: "Aktiv økt" },

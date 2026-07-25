@@ -272,12 +272,13 @@
 
     var run = function (el) {
       var target = parseInt(el.getAttribute('data-count'), 10) || 0;
-      if (reduce || !target) { el.textContent = String(target); return; }
+      var suffix = el.getAttribute('data-count-suffix') || '';
+      if (reduce || !target) { el.textContent = String(target) + suffix; return; }
       var start = performance.now(), dur = 1100;
       var step = function (now) {
         var p = Math.min((now - start) / dur, 1);
         var eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = String(Math.round(target * eased));
+        el.textContent = String(Math.round(target * eased)) + suffix;
         if (p < 1) requestAnimationFrame(step);
       };
       requestAnimationFrame(step);
