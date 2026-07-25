@@ -114,12 +114,13 @@ window.OKT_STRINGS = {
 
   /* ─── watch ─── */
   "watch.eyebrow": { en: "Apple Watch", no: "Apple Watch" },
-  "watch.title":   { en: "Leave the phone in the bag.", no: "La telefonen ligge i bagen." },
-  "watch.sub":     { en: "Log sets from your wrist, with live heart rate and active energy read straight from HealthKit. Completed sessions are written back to the Health app — and never to a server.",
-                     no: "Logg sett fra håndleddet, med puls og aktivt energiforbruk lest direkte fra HealthKit. Fullførte økter skrives tilbake til Helse-appen — og aldri til en server." },
-  "watch.p1": { en: "Live heart rate during the set", no: "Puls i sanntid under settet" },
+  "watch.title":   { en: "Your heart rate, right next to the rest timer.", no: "Pulsen din, rett ved siden av pausetimeren." },
+  "watch.sub":     { en: "The watch reads live heart rate and active energy from HealthKit while you train. Completed sessions are written back to the Health app — and never to a server.",
+                     no: "Klokka leser puls og aktivt energiforbruk fra HealthKit mens du trener. Fullførte økter skrives tilbake til Helse-appen — og aldri til en server." },
+  "watch.p1": { en: "Live heart rate during the session", no: "Puls i sanntid gjennom økta" },
   "watch.p2": { en: "Active energy from HealthKit",   no: "Aktivt energiforbruk fra HealthKit" },
   "watch.p3": { en: "Sessions written back to Health", no: "Økter skrives tilbake til Helse" },
+  "watch.mock.ex": { en: "Bench Press", no: "Benkpress" },
 
   /* ─── achievements ─── */
   "ach.eyebrow": { en: "Trophy case", no: "Premieskap" },

@@ -23,7 +23,7 @@
   <meta property="og:locale" content="en_GB" />
   <meta property="og:url" content="https://oktapp.com/" />
   <meta property="og:title" content="ØKT — Ready for the next session" />
-  <meta property="og:description" content="A premium workout logger built for serious training. Smart timers, honest progress, and zero noise between you and the bar." />
+  <meta property="og:description" content="ØKT is a premium workout logging app built for serious training. Automatic rest timers, honest progress tracking, Apple Watch support and 36 achievements. Free, no account, no tracking." />
   <meta property="og:image" content="https://oktapp.com/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -420,27 +420,90 @@
     .watch-frame {
       width: min(232px, 80%);
       margin: 0 auto;
-      aspect-ratio: 0.84;
+      aspect-ratio: 0.82;
       background: linear-gradient(160deg, #2a3542, #141c26);
-      border-radius: 58px;
-      padding: 10px;
+      border-radius: 17%;
+      padding: 9px;
       box-shadow: 0 0 0 1px rgba(255,255,255,.05), 0 30px 60px rgba(0,0,0,.6);
     }
     .watch-screen {
+      position: relative;
       height: 100%;
-      background: #04070b;
-      border-radius: 48px;
-      padding: 22px 18px;
+      background: #000;
+      border-radius: 14%;
+      padding: 9% 8% 6%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      gap: 10px;
+      align-items: center;
+      overflow: hidden;
+    }
+    .watch-time {
+      align-self: flex-end;
+      font-size: 11px; font-weight: 600; color: #fff;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .watch-ex {
+      margin-top: 3px;
+      font-size: 11px; color: #8e8e93; line-height: 1.2;
       text-align: center;
     }
-    .watch-bpm { font-size: 40px; font-weight: 900; color: #ff6b6b; letter-spacing: -2px; line-height: 1; }
-    .watch-unit { font-size: 10px; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; }
-    .watch-div { height: 1px; background: #1a2430; margin: 4px 0; }
-    .watch-kcal { font-size: 22px; font-weight: 800; color: var(--cardio); letter-spacing: -.5px; }
+
+    .watch-ring {
+      position: relative;
+      width: 100%;
+      flex: 1;
+      margin-top: 4px;
+      display: grid;
+      place-items: center;
+    }
+    .watch-ring-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      transform: rotate(-90deg);
+    }
+    .watch-ring-track, .watch-ring-arc {
+      fill: none;
+      stroke-width: 4;
+    }
+    .watch-ring-track { stroke: #1c1c1e; }
+    .watch-ring-arc {
+      stroke: #0a84ff;
+      stroke-linecap: round;
+      /* r=46 → circumference ≈ 289; ~13% filled */
+      stroke-dasharray: 289;
+      stroke-dashoffset: 251;
+    }
+    .watch-ring-mid { text-align: center; line-height: 1; }
+    .watch-count {
+      font-size: 30px; font-weight: 800; color: #fff;
+      letter-spacing: 2px;
+      font-variant-numeric: tabular-nums;
+    }
+    .watch-total {
+      margin-top: 5px;
+      font-size: 18px; color: #8e8e93;
+      font-variant-numeric: tabular-nums;
+    }
+    .watch-hr {
+      position: absolute;
+      right: 16%; bottom: 9%;
+      display: flex; flex-direction: column; align-items: center; gap: 1px;
+      line-height: 1;
+    }
+    .watch-hr svg { width: 11px; height: 11px; color: #ff3b30; }
+    .watch-hr span {
+      font-size: 11px; font-weight: 600; color: #fff;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .watch-dots { display: flex; gap: 4px; margin-top: 5px; }
+    .watch-dots span {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: #3a3a3c;
+    }
+    .watch-dots span.on { background: #fff; }
 
     .check-list { list-style: none; display: flex; flex-direction: column; gap: 13px; margin-top: 28px; }
     .check-list li {
@@ -639,7 +702,7 @@
       </ul>
       <a href="#download" class="nav-cta" data-i18n="nav.download">Download</a>
       <button class="hamburger" type="button" aria-expanded="false" aria-controls="okt-drawer"
-              data-i18n-attr="aria-label:drawer.open">
+              data-i18n-attr="aria-label:drawer.open" aria-label="Open menu">
         <span class="bars"><span></span><span></span><span></span></span>
       </button>
     </div>
@@ -691,27 +754,27 @@
       <div class="feature-card reveal">
         <div class="feature-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6M18.5 5.5l1.5-1.5"/></svg></div>
         <div class="feature-title" data-i18n="f1.t">Automatic rest timers</div>
-        <div class="feature-desc" data-i18n="f1.d"></div>
+        <div class="feature-desc" data-i18n="f1.d">Log a set and the rest timer fires instantly. Countdown, colour shift, haptic buzz — back to work without thinking.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12.5" y="8" width="3" height="10"/><rect x="18" y="4" width="3" height="14"/></svg></div>
         <div class="feature-title" data-i18n="f2.t">Previous data on the card</div>
-        <div class="feature-desc" data-i18n="f2.d"></div>
+        <div class="feature-desc" data-i18n="f2.d">See “Last: 75 kg × 8 · 3 sets” directly on the exercise card. No tapping into history — progressive overload is frictionless.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s5 5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 1-3.5S12 11 12 8c0-2-1-3-1-3s1-2 1-3z"/></svg></div>
         <div class="feature-title" data-i18n="f3.t">Core timer mode</div>
-        <div class="feature-desc" data-i18n="f3.d"></div>
+        <div class="feature-desc" data-i18n="f3.d">Configure work and rest intervals once. The timer counts down your work, rests automatically, and queues the next set.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="12" cy="15" r="1.4" fill="currentColor"/></svg></div>
         <div class="feature-title" data-i18n="f4.t">Calendar planning</div>
-        <div class="feature-desc" data-i18n="f4.d"></div>
+        <div class="feature-desc" data-i18n="f4.d">Plan workouts ahead with exercises, sets, and notes. On the day, one tap converts your plan into a live session.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16l5-6 4 4 8-9"/><path d="M16 5h5v5"/></svg></div>
         <div class="feature-title" data-i18n="f5.t">Progress charts</div>
-        <div class="feature-desc" data-i18n="f5.d"></div>
+        <div class="feature-desc" data-i18n="f5.d">Strength volume, cardio distance, and body measurements tracked over time. Weekly goals with streak history.</div>
       </div>
       <div class="feature-card reveal">
         <div class="feature-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h2M20 12h2M6 8v8M18 8v8M9 6v12M15 6v12M9 12h6"/></svg></div>
@@ -729,7 +792,7 @@
       <div class="reveal">
         <p class="section-eyebrow" data-i18n="sess.eyebrow">Live session</p>
         <h2 class="section-title" data-i18n="sess.title">The session screen does one thing.</h2>
-        <p class="section-sub" data-i18n="sess.sub"></p>
+        <p class="section-sub" data-i18n="sess.sub">A circular timer, your current weight and reps, and the Log Set button. Everything else stays out of the way until you need it.</p>
         <div class="splits-row">
           <div class="split-chip"><span class="split-dot" style="background:var(--press)"></span><span data-i18n="split.press">Press</span></div>
           <div class="split-chip"><span class="split-dot" style="background:var(--pull)"></span><span data-i18n="split.pull">Pull</span></div>
@@ -825,7 +888,7 @@
       <div class="reveal">
         <p class="section-eyebrow" data-i18n="log.eyebrow">Training history</p>
         <h2 class="section-title" data-i18n="log.title">Every session saved.<br>Instantly scannable.</h2>
-        <p class="section-sub" data-i18n="log.sub"></p>
+        <p class="section-sub" data-i18n="log.sub">Colour-coded by split, exercise names inline, and intensity at a glance. Search, filter, and sort your full history.</p>
       </div>
     </div>
   </section>
@@ -837,29 +900,37 @@
     <div class="split">
       <div class="reveal">
         <p class="section-eyebrow" data-i18n="watch.eyebrow">Apple Watch</p>
-        <h2 class="section-title" data-i18n="watch.title">Leave the phone in the bag.</h2>
-        <p class="section-sub" data-i18n="watch.sub"></p>
+        <h2 class="section-title" data-i18n="watch.title">Your heart rate, right next to the rest timer.</h2>
+        <p class="section-sub" data-i18n="watch.sub">The watch reads live heart rate and active energy from HealthKit while you train. Completed sessions are written back to the Health app — and never to a server.</p>
         <ul class="check-list">
-          <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="watch.p1"></span></li>
-          <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="watch.p2"></span></li>
-          <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="watch.p3"></span></li>
+          <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="watch.p1">Live heart rate during the session</span></li>
+          <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="watch.p2">Active energy from HealthKit</span></li>
+          <li><span class="tick"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="watch.p3">Sessions written back to Health</span></li>
         </ul>
       </div>
 
       <div class="visual reveal">
         <div class="watch-frame" role="img" aria-label="ØKT on Apple Watch">
           <div class="watch-screen">
-            <div>
-              <div class="watch-bpm">148</div>
-              <div class="watch-unit">BPM</div>
+            <div class="watch-time">02:18</div>
+            <div class="watch-ex" data-i18n="watch.mock.ex">Bench Press</div>
+
+            <div class="watch-ring">
+              <svg class="watch-ring-svg" viewBox="0 0 100 100" aria-hidden="true">
+                <circle class="watch-ring-track" cx="50" cy="50" r="46" />
+                <circle class="watch-ring-arc"   cx="50" cy="50" r="46" />
+              </svg>
+              <div class="watch-ring-mid">
+                <div class="watch-count">0:07</div>
+                <div class="watch-total">(1:57)</div>
+              </div>
+              <div class="watch-hr">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-8-4.9-8-10.4A4.6 4.6 0 0 1 12 7a4.6 4.6 0 0 1 8 3.6C20 16.1 12 21 12 21z"/></svg>
+                <span>87</span>
+              </div>
             </div>
-            <div class="watch-div"></div>
-            <div>
-              <div class="watch-kcal">312</div>
-              <div class="watch-unit">KCAL</div>
-            </div>
-            <div class="watch-div"></div>
-            <div style="font-family:'DM Mono',monospace;font-size:15px;color:var(--text-2)">00:42:18</div>
+
+            <div class="watch-dots"><span class="on"></span><span></span></div>
           </div>
         </div>
       </div>
@@ -872,18 +943,18 @@
   <section id="achievements">
     <p class="section-eyebrow reveal" data-i18n="ach.eyebrow">Trophy case</p>
     <h2 class="section-title reveal" data-i18n="ach.title">36 real achievements.<br>Earned through training.</h2>
-    <p class="section-sub reveal" data-i18n="ach.sub"></p>
+    <p class="section-sub reveal" data-i18n="ach.sub">From logging your first session to lifting the weight of a bus in a single week — every milestone is computed from your real data.</p>
 
     <div class="ach-grid reveal">
-      <div class="ach-row"><div class="ach-icon">▶</div><div><div class="ach-title" data-i18n="ach.a1"></div><div class="ach-cat" data-i18n="ach.c1"></div></div></div>
-      <div class="ach-row"><div class="ach-icon">🔥</div><div><div class="ach-title" data-i18n="ach.a2"></div><div class="ach-cat" data-i18n="ach.c1"></div></div></div>
-      <div class="ach-row"><div class="ach-icon">⚡</div><div><div class="ach-title" data-i18n="ach.a3"></div><div class="ach-cat" data-i18n="ach.c2"></div></div></div>
-      <div class="ach-row"><div class="ach-icon">🚗</div><div><div class="ach-title" data-i18n="ach.a4"></div><div class="ach-cat" data-i18n="ach.c3"></div></div></div>
-      <div class="ach-row"><div class="ach-icon">🚌</div><div><div class="ach-title" data-i18n="ach.a5"></div><div class="ach-cat" data-i18n="ach.c3"></div></div></div>
-      <div class="ach-row"><div class="ach-icon">✈️</div><div><div class="ach-title" data-i18n="ach.a6"></div><div class="ach-cat" data-i18n="ach.c3"></div></div></div>
-      <div class="ach-row locked"><div class="ach-icon">🚂</div><div><div class="ach-title" data-i18n="ach.a7"></div><div class="ach-cat" data-i18n="ach.c3"></div></div></div>
-      <div class="ach-row locked"><div class="ach-icon">⚓</div><div><div class="ach-title" data-i18n="ach.a8"></div><div class="ach-cat" data-i18n="ach.c2"></div></div></div>
-      <div class="ach-row locked"><div class="ach-icon">🌙</div><div><div class="ach-title" data-i18n="ach.a9"></div><div class="ach-cat" data-i18n="ach.c4"></div></div></div>
+      <div class="ach-row"><div class="ach-icon">▶</div><div><div class="ach-title" data-i18n="ach.a1">First Rep</div><div class="ach-cat" data-i18n="ach.c1">First steps</div></div></div>
+      <div class="ach-row"><div class="ach-icon">🔥</div><div><div class="ach-title" data-i18n="ach.a2">First Sweat</div><div class="ach-cat" data-i18n="ach.c1">First steps</div></div></div>
+      <div class="ach-row"><div class="ach-icon">⚡</div><div><div class="ach-title" data-i18n="ach.a3">On a Roll</div><div class="ach-cat" data-i18n="ach.c2">Consistency</div></div></div>
+      <div class="ach-row"><div class="ach-icon">🚗</div><div><div class="ach-title" data-i18n="ach.a4">Car</div><div class="ach-cat" data-i18n="ach.c3">Vehicles</div></div></div>
+      <div class="ach-row"><div class="ach-icon">🚌</div><div><div class="ach-title" data-i18n="ach.a5">Bus</div><div class="ach-cat" data-i18n="ach.c3">Vehicles</div></div></div>
+      <div class="ach-row"><div class="ach-icon">✈️</div><div><div class="ach-title" data-i18n="ach.a6">Plane</div><div class="ach-cat" data-i18n="ach.c3">Vehicles</div></div></div>
+      <div class="ach-row locked"><div class="ach-icon">🚂</div><div><div class="ach-title" data-i18n="ach.a7">Train</div><div class="ach-cat" data-i18n="ach.c3">Vehicles</div></div></div>
+      <div class="ach-row locked"><div class="ach-icon">⚓</div><div><div class="ach-title" data-i18n="ach.a8">Iron Habit</div><div class="ach-cat" data-i18n="ach.c2">Consistency</div></div></div>
+      <div class="ach-row locked"><div class="ach-icon">🌙</div><div><div class="ach-title" data-i18n="ach.a9">Night Owl</div><div class="ach-cat" data-i18n="ach.c4">Session</div></div></div>
     </div>
   </section>
 
@@ -894,17 +965,17 @@
         <div class="reveal">
           <p class="section-eyebrow" data-i18n="pt.eyebrow">Privacy by architecture</p>
           <h2 class="section-title" data-i18n="pt.title">No account. No server.<br>No tracking.</h2>
-          <p class="section-sub" data-i18n="pt.sub"></p>
+          <p class="section-sub" data-i18n="pt.sub">Your workout data is written to your device and nowhere else. There is no login, no analytics SDK, and nothing for anyone to sell — because it never leaves the phone in the first place.</p>
           <a class="priv-link" href="privacy.html">
             <span data-i18n="pt.link">Read the full privacy policy</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </div>
         <ul class="priv-list reveal">
-          <li><span class="lock"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><span data-i18n="pt.p1"></span></li>
-          <li><span class="lock"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="8" r="4"/></svg></span><span data-i18n="pt.p2"></span></li>
-          <li><span class="lock"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></span><span data-i18n="pt.p3"></span></li>
-          <li><span class="lock"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13"/></svg></span><span data-i18n="pt.p4"></span></li>
+          <li><span class="lock"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><span data-i18n="pt.p1">Stored locally on your device only</span></li>
+          <li><span class="lock"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="8" r="4"/></svg></span><span data-i18n="pt.p2">No account or login required</span></li>
+          <li><span class="lock"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></span><span data-i18n="pt.p3">No analytics or tracking SDKs</span></li>
+          <li><span class="lock"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13"/></svg></span><span data-i18n="pt.p4">Deleting the app deletes everything</span></li>
         </ul>
       </div>
     </section>
@@ -918,28 +989,28 @@
 
     <div class="faq-list reveal">
       <div class="faq-item">
-        <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.q1"></span><span class="plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
-        <div class="faq-a"><div><p data-i18n="faq.a1"></p></div></div>
+        <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.q1">What does ØKT cost?</span><span class="plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="faq-a"><div><p data-i18n="faq.a1">Nothing. ØKT is free — no subscription, no in-app purchases, no ads.</p></div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.q2"></span><span class="plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
-        <div class="faq-a"><div><p data-i18n="faq.a2"></p></div></div>
+        <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.q2">Where is my training data stored?</span><span class="plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="faq-a"><div><p data-i18n="faq.a2">Exclusively on your own device, in the operating system's local storage. It is never uploaded to a server belonging to ØKT.</p></div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.q3"></span><span class="plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
-        <div class="faq-a"><div><p data-i18n="faq.a3"></p></div></div>
+        <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.q3">Do I need to create an account?</span><span class="plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="faq-a"><div><p data-i18n="faq.a3">No. There is no sign-up and no login — open the app and start logging.</p></div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.q4"></span><span class="plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
-        <div class="faq-a"><div><p data-i18n="faq.a4"></p></div></div>
+        <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.q4">Does ØKT work with Apple Watch?</span><span class="plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="faq-a"><div><p data-i18n="faq.a4">Yes. On iOS, ØKT reads heart rate and active energy from HealthKit during a session and writes completed workouts back to the Health app. You can revoke that access at any time in Health → Sharing → Apps.</p></div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.q5"></span><span class="plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
-        <div class="faq-a"><div><p data-i18n="faq.a5"></p></div></div>
+        <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.q5">What happens to my data if I change phones?</span><span class="plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="faq-a"><div><p data-i18n="faq.a5">Because the data lives on your device, it follows your device backup. iCloud and Google backups are handled by Apple and Google under their own policies — ØKT has no access to them.</p></div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.q6"></span><span class="plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
-        <div class="faq-a"><div><p data-i18n="faq.a6"></p></div></div>
+        <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.q6">When does it launch?</span><span class="plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+        <div class="faq-a"><div><p data-i18n="faq.a6">ØKT is in the final stages before release on the App Store and Google Play. Leave your email below and you'll hear the day it goes live.</p></div></div>
       </div>
     </div>
   </section>
@@ -949,24 +1020,24 @@
     <div class="cta-inner">
       <div class="cta-mark" data-mark aria-hidden="true"></div>
       <h2 class="cta-title" data-i18n="cta.title">Ready for the next session?</h2>
-      <p class="cta-sub" data-i18n="cta.sub"></p>
+      <p class="cta-sub" data-i18n="cta.sub">Free at launch. No subscription. Your data stays on your device.</p>
 
       <form class="notify-form" id="notify">
         <input type="email" name="email" required autocomplete="email"
                placeholder="your@email.com" data-i18n-attr="placeholder:cta.email" aria-label="Email" />
         <button class="btn-primary" type="submit"><span data-i18n="cta.notify">Notify me</span></button>
       </form>
-      <p class="notify-fine" data-i18n="cta.fine"></p>
+      <p class="notify-fine" data-i18n="cta.fine">One email at launch. Nothing else, ever.</p>
 
       <p class="store-eyebrow" data-i18n="cta.soon">Coming soon to</p>
       <div class="store-row">
         <span class="store-btn">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-          <span class="store-lines"><span class="store-small" data-i18n="store.soon"></span><br><span class="store-big">App Store</span></span>
+          <span class="store-lines"><span class="store-small" data-i18n="store.soon">Coming soon</span><br><span class="store-big">App Store</span></span>
         </span>
         <span class="store-btn">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.8a1.6 1.6 0 0 0-.8 1.4v17.6c0 .6.3 1.1.8 1.4l9.6-10.2L3.6 1.8zm11.3 8.4L5.5 1.1l11.9 6.8-2.5 2.3zM19.4 10.8c.8.5.8 1.9 0 2.4l-2.4 1.4-2.8-2.6 2.8-2.6 2.4 1.4zM5.5 22.9l9.4-9.1 2.5 2.3-11.9 6.8z"/></svg>
-          <span class="store-lines"><span class="store-small" data-i18n="store.soon"></span><br><span class="store-big">Google Play</span></span>
+          <span class="store-lines"><span class="store-small" data-i18n="store.soon">Coming soon</span><br><span class="store-big">Google Play</span></span>
         </span>
       </div>
     </div>
@@ -982,7 +1053,7 @@
           <span class="brand-mark" data-mark></span>
           <img src="assets/logo.png" alt="ØKT" class="brand-word" />
         </a>
-        <p class="footer-tag" data-i18n="footer.tag"></p>
+        <p class="footer-tag" data-i18n="footer.tag">A premium workout logger built for serious training.</p>
       </div>
       <ul class="footer-links">
         <li><a href="#features"     data-i18n="nav.features">Features</a></li>
