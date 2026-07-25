@@ -119,15 +119,12 @@
       color: #eef1f6;
       filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
     }
-    .hero-word {
-      font-size: clamp(58px, 13vw, 132px);
-      font-weight: 900;
-      letter-spacing: -5px;
-      line-height: .88;
-      background: linear-gradient(180deg, #ffffff 10%, #a9bad0 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .hero-word { line-height: 0; }
+    .hero-word img {
+      display: block;
+      height: clamp(52px, 11vw, 118px);
+      width: auto;
+      filter: drop-shadow(0 8px 30px rgba(0,0,0,.35));
     }
 
     .hero-tagline {
@@ -616,7 +613,6 @@
       .stat-item:nth-child(even) { border-right: none; }
       .stat-item:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
       .hero-lockup { flex-direction: column; gap: 18px; }
-      .hero-word { letter-spacing: -3px; }
     }
   </style>
 </head>
@@ -629,7 +625,7 @@
   <nav class="site-nav">
     <a href="/" class="brand" aria-label="ØKT">
       <span class="brand-mark" data-mark></span>
-      <span class="brand-word">ØKT</span>
+      <img src="assets/logo.png" alt="ØKT" class="brand-word" />
     </a>
 
     <div class="nav-right">
@@ -657,7 +653,7 @@
 
     <div class="hero-lockup">
       <div class="hero-mark" data-mark aria-hidden="true"></div>
-      <h1 class="hero-word">ØKT</h1>
+      <h1 class="hero-word"><img src="assets/logo.png" alt="ØKT" /></h1>
     </div>
 
     <p class="hero-tagline" data-i18n="hero.tagline">Ready for the next session</p>
@@ -984,7 +980,7 @@
       <div class="footer-brand">
         <a href="/" class="brand" aria-label="ØKT">
           <span class="brand-mark" data-mark></span>
-          <span class="brand-word">ØKT</span>
+          <img src="assets/logo.png" alt="ØKT" class="brand-word" />
         </a>
         <p class="footer-tag" data-i18n="footer.tag"></p>
       </div>

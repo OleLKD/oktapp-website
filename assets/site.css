@@ -141,10 +141,9 @@ a { color: var(--blue); }
 .brand-mark svg { width: 58%; height: 58%; color: #e9edf3; }
 
 .brand-word {
-  font-size: 19px;
-  font-weight: 900;
-  letter-spacing: -0.5px;
-  line-height: 1;
+  display: block;
+  height: 19px;
+  width: auto;
 }
 
 .nav-right {
