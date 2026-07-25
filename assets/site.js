@@ -25,8 +25,8 @@
   var FLAG_NO =
     '<svg viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
     '<rect width="22" height="16" fill="#BA0C2F"/>' +
-    '<path d="M0 6h22M8 0v16" stroke="#fff" stroke-width="4"/>' +
-    '<path d="M0 8h22M8 0v16" stroke="#00205B" stroke-width="2"/></svg>';
+    '<rect x="6" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/>' +
+    '<rect x="7" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/></svg>';
 
   var MARK =
     '<svg viewBox="176 139 678 745" aria-hidden="true">' +
@@ -166,10 +166,10 @@
         '</ul>' +
         '<p class="drawer-label" data-i18n="drawer.lang"></p>' +
         '<div class="lang-switch">' +
-          '<button class="lang-btn" type="button" data-lang="en" aria-pressed="false">' +
-            '<span class="flag">' + FLAG_GB + '</span>English</button>' +
-          '<button class="lang-btn" type="button" data-lang="no" aria-pressed="false">' +
-            '<span class="flag">' + FLAG_NO + '</span>Norsk</button>' +
+          '<button class="lang-btn" type="button" data-lang="en" aria-pressed="false" aria-label="English">' +
+            '<span class="flag">' + FLAG_GB + '</span></button>' +
+          '<button class="lang-btn" type="button" data-lang="no" aria-pressed="false" aria-label="Norsk">' +
+            '<span class="flag">' + FLAG_NO + '</span></button>' +
         '</div>' +
         '<a class="drawer-cta" href="' + (page === 'home' ? '#download' : '/#download') + '" ' +
           'data-i18n="drawer.cta"></a>' +

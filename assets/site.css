@@ -311,30 +311,25 @@ a { color: var(--blue); }
 }
 
 .lang-btn {
-  flex: 1;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
+  justify-content: center;
+  padding: 10px;
   border-radius: 13px;
   border: 1px solid var(--border);
   background: var(--card);
-  color: var(--text-2);
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 600;
   cursor: pointer;
-  transition: border-color .2s, color .2s, background .2s;
+  transition: border-color .2s, background .2s;
 }
-.lang-btn:hover { border-color: var(--border-hi); color: var(--text); }
+.lang-btn:hover { border-color: var(--border-hi); }
 .lang-btn[aria-pressed="true"] {
   border-color: var(--blue);
   background: rgba(77,150,255,0.10);
-  color: var(--text);
 }
 
 .lang-btn .flag {
-  width: 24px; height: 18px;
+  width: 28px; height: 20px;
   border-radius: 3px;
   overflow: hidden;
   flex-shrink: 0;
