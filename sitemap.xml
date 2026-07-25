@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://oktapp.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://oktapp.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://oktapp.com/?lang=no"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://oktapp.com/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://oktapp.com/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://oktapp.com/privacy.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://oktapp.com/privacy.html?lang=no"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+</urlset>
