@@ -393,7 +393,7 @@ a { color: var(--blue); }
 }
 .btn-secondary:hover { border-color: var(--border-hi); color: var(--text); transform: translateY(-2px); }
 
-/* pre-launch store buttons — visually present, clearly not live */
+/* live store link */
 .store-btn {
   display: inline-flex;
   align-items: center;
@@ -404,9 +404,13 @@ a { color: var(--blue); }
   background: var(--card);
   color: var(--muted);
   text-decoration: none;
-  cursor: default;
+  cursor: pointer;
   position: relative;
+  transition: border-color .2s, transform .2s;
 }
+.store-btn:hover { border-color: var(--border-hi); transform: translateY(-2px); }
+.store-btn:hover .store-big { color: var(--text); }
+.store-btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
 .store-btn .store-lines { text-align: left; line-height: 1.25; }
 .store-btn .store-small { font-size: 10px; letter-spacing: .6px; text-transform: uppercase; color: var(--faint); }
 .store-btn .store-big { font-size: 15px; font-weight: 700; color: var(--text-2); }

@@ -22,7 +22,7 @@ window.OKT_STRINGS = {
   "drawer.lang":      { en: "Language",        no: "Språk" },
   "drawer.close":     { en: "Close menu",      no: "Lukk menyen" },
   "drawer.open":      { en: "Open menu",       no: "Åpne menyen" },
-  "drawer.cta":       { en: "Get notified at launch", no: "Få beskjed ved lansering" },
+  "drawer.cta":       { en: "Download on the App Store", no: "Last ned i App Store" },
   "drawer.foot":      { en: "Local-first. No account, no tracking.", no: "Lokalt først. Ingen konto, ingen sporing." },
   "skip":             { en: "Skip to content", no: "Hopp til innhold" },
 
@@ -38,11 +38,11 @@ window.OKT_STRINGS = {
                         no: "ØKT er en gjennomarbeidet treningsdagbok for deg som mener alvor. Automatiske pausetimere, ærlig framgang, Apple Watch-støtte og 36 utmerkelser. Gratis, uten konto og uten sporing." },
 
   /* ─── hero ─── */
-  "hero.badge":       { en: "Coming soon to iOS & Android", no: "Kommer snart til iOS og Android" },
+  "hero.badge":       { en: "Out now for iPhone & Apple Watch", no: "Ute nå for iPhone og Apple Watch" },
   "hero.tagline":     { en: "Ready for the next session",   no: "Klar for neste økt" },
   "hero.desc":        { en: "A premium workout logger built for serious training. Smart timers, honest progress, and zero noise between you and the bar.",
                         no: "En gjennomarbeidet treningsdagbok for deg som mener alvor. Smarte timere, ærlig framgang og null støy mellom deg og stanga." },
-  "hero.cta1":        { en: "Get notified at launch", no: "Få beskjed ved lansering" },
+  "hero.cta1":        { en: "Download on the App Store", no: "Last ned i App Store" },
   "hero.cta2":        { en: "See how it works",       no: "Se hvordan det fungerer" },
   "hero.scroll":      { en: "Scroll",                 no: "Bla ned" },
 
@@ -172,20 +172,23 @@ window.OKT_STRINGS = {
   "faq.q5": { en: "What happens to my data if I change phones?", no: "Hva skjer med dataene hvis jeg bytter telefon?" },
   "faq.a5": { en: "Because the data lives on your device, it follows your device backup. iCloud and Google backups are handled by Apple and Google under their own policies — ØKT has no access to them.",
               no: "Siden dataene ligger på enheten, følger de enhetens sikkerhetskopi. iCloud- og Google-backup håndteres av Apple og Google etter deres egne vilkår — ØKT har ingen tilgang til dem." },
-  "faq.q6": { en: "When does it launch?", no: "Når lanseres appen?" },
-  "faq.a6": { en: "ØKT is in the final stages before release on the App Store and Google Play. Leave your email below and you'll hear the day it goes live.",
-              no: "ØKT er i sluttfasen før lansering på App Store og Google Play. Legg igjen e-posten din under, så hører du fra oss den dagen appen er ute." },
+  "faq.q6": { en: "Is it available?", no: "Er appen tilgjengelig?" },
+  "faq.a6": { en: "Yes. ØKT is out now on the App Store for iPhone and Apple Watch — free, and with no account. An Android version is planned for later; leave your email below and you'll hear the day it lands.",
+              no: "Ja. ØKT er ute nå i App Store for iPhone og Apple Watch — gratis, og uten konto. En Android-versjon er planlagt senere; legg igjen e-posten din under, så hører du fra oss den dagen den er klar." },
 
   /* ─── CTA ─── */
   "cta.title":  { en: "Ready for the next session?", no: "Klar for neste økt?" },
-  "cta.sub":    { en: "Free at launch. No subscription. Your data stays on your device.",
-                  no: "Gratis ved lansering. Uten abonnement. Dataene dine blir på enheten din." },
-  "cta.soon":   { en: "Coming soon to",  no: "Kommer snart til" },
-  "store.soon": { en: "Coming soon",     no: "Kommer snart" },
+  "cta.sub":    { en: "Free. No subscription. Your data stays on your device.",
+                  no: "Gratis. Uten abonnement. Dataene dine blir på enheten din." },
+  "cta.soon":     { en: "Available now",       no: "Tilgjengelig nå" },
+  "store.badge":  { en: "Download on the",     no: "Last ned i" },
+  "store.android":{ en: "Android — coming later", no: "Android — kommer senere" },
+  "cta.android":  { en: "Want to know when Android lands?",
+                    no: "Vil du vite når Android er klar?" },
   "cta.email":  { en: "your@email.com",  no: "din@epost.no" },
   "cta.notify": { en: "Notify me",       no: "Gi meg beskjed" },
-  "cta.fine":   { en: "One email at launch. Nothing else, ever.",
-                  no: "Én e-post ved lansering. Ingenting annet, noensinne." },
+  "cta.fine":   { en: "One email when Android ships. Nothing else, ever.",
+                  no: "Én e-post når Android er klar. Ingenting annet, noensinne." },
 
   /* ══════════════  PRIVACY PAGE  ══════════════ */
 
@@ -209,8 +212,8 @@ window.OKT_STRINGS = {
                 no: "Sletter du appen, slettes alle dataene dine permanent" },
 
   "pv.s1.t": { en: "Introduction", no: "Innledning" },
-  "pv.s1.a": { en: "ØKT (“we”, “our”, or “the app”) is a workout logging application developed for iOS and Android. This Privacy Policy explains how ØKT handles information when you use the app.",
-               no: "ØKT («vi», «vår» eller «appen») er en app for loggføring av trening, utviklet for iOS og Android. Denne personvernerklæringen forklarer hvordan ØKT håndterer informasjon når du bruker appen." },
+  "pv.s1.a": { en: "ØKT (“we”, “our”, or “the app”) is a workout logging application developed for iOS. This Privacy Policy explains how ØKT handles information when you use the app.",
+               no: "ØKT («vi», «vår» eller «appen») er en app for loggføring av trening, utviklet for iOS. Denne personvernerklæringen forklarer hvordan ØKT håndterer informasjon når du bruker appen." },
   "pv.s1.b": { en: "We built ØKT with privacy as a default, not an afterthought. The app does not require an account, does not connect to any server to store your data, and does not include any advertising or analytics infrastructure.",
                no: "ØKT er bygget med personvern som utgangspunkt, ikke som en ettertanke. Appen krever ingen konto, kobler seg ikke til noen server for å lagre dataene dine, og inneholder ingen infrastruktur for reklame eller analyse." },
 
@@ -255,12 +258,12 @@ window.OKT_STRINGS = {
   "pv.s5.t": { en: "Third-party services", no: "Tredjepartstjenester" },
   "pv.s5.a": { en: "ØKT does not integrate with any third-party analytics, advertising, or data processing services.",
                no: "ØKT er ikke integrert med noen tredjepartstjenester for analyse, reklame eller databehandling." },
-  "pv.s5.b": { en: "The app uses the following platform services provided by Apple (iOS) and Google (Android) as part of standard app operation:",
-               no: "Appen benytter følgende plattformtjenester fra Apple (iOS) og Google (Android) som del av normal drift:" },
+  "pv.s5.b": { en: "The app uses the following platform services provided by Apple (iOS) as part of standard app operation:",
+               no: "Appen benytter følgende plattformtjenester fra Apple (iOS) som del av normal drift:" },
   "pv.s5.l1": { en: "<strong>Expo / React Native framework</strong> — the technical foundation of the app. No data is transmitted to Expo servers during normal app use.",
                 no: "<strong>Expo / React Native-rammeverket</strong> — det tekniske fundamentet i appen. Ingen data overføres til Expos servere ved normal bruk." },
-  "pv.s5.l2": { en: "<strong>App Store / Google Play</strong> — app distribution platforms. Download and purchase information is handled by Apple and Google under their own privacy policies.",
-                no: "<strong>App Store / Google Play</strong> — plattformer for distribusjon av apper. Informasjon om nedlasting og kjøp håndteres av Apple og Google etter deres egne personvernerklæringer." },
+  "pv.s5.l2": { en: "<strong>App Store</strong> — app distribution platform. Download and purchase information is handled by Apple under its own privacy policy.",
+                no: "<strong>App Store</strong> — plattform for distribusjon av apper. Informasjon om nedlasting og kjøp håndteres av Apple etter deres egen personvernerklæring." },
   "pv.s5.c": { en: "When you tap the YouTube “Guide” button within the app, you are directed to YouTube in your device's browser or the YouTube app. Any data collected by YouTube during that session is subject to Google's privacy policy, not ours.",
                no: "Når du trykker på YouTube-knappen «Guide» i appen, sendes du til YouTube i nettleseren på enheten din eller i YouTube-appen. Data YouTube samler inn i den forbindelse omfattes av Googles personvernerklæring, ikke vår." },
 
