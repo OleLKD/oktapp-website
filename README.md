@@ -42,3 +42,19 @@ dictionary and prints a have/want diff for anything out of sync. Requires only
 Node (no dependencies, nothing installed).
 
 If it fails, **fix the HTML, not the dictionary.**
+
+### Cache busting — bump `?v=` when you change an asset
+
+`site.css`, `site.js` and `i18n.js` are loaded with a `?v=<date>` query string
+in **both** `index.html` and `privacy.html`. GitHub Pages serves them with
+`Cache-Control: max-age=600`, so without it a returning visitor keeps a stale
+copy for up to ten minutes after a deploy.
+
+For `i18n.js` that is worse than ordinary staleness: `applyLang()` overwrites
+the HTML at runtime, so a stale dictionary **silently replaces correct copy with
+old strings**. The page ships the right text, then JS puts the wrong text back.
+Scrapers and `curl` still see the correct fallback, so the bug is invisible to
+any check that does not run JS.
+
+**After changing any file in `assets/`, bump `?v=` to the current date in both
+HTML files.** Keep the value identical across all three tags and both pages.

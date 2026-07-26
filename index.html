@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700;9..40,900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css" />
+  <link rel="stylesheet" href="assets/site.css?v=2026-07-26" />
 
   <style>
     /* ═══════════  HERO  ═══════════ */
@@ -1067,8 +1067,11 @@
     </div>
   </footer>
 
-  <script src="assets/i18n.js"></script>
-  <script src="assets/site.js"></script>
+  <!-- ?v= is a cache buster: bump it in BOTH pages whenever assets change.
+       i18n.js overwrites the HTML copy at runtime, so a stale cached copy
+       silently replaces correct text with old strings. -->
+  <script src="assets/i18n.js?v=2026-07-26"></script>
+  <script src="assets/site.js?v=2026-07-26"></script>
   <script>
     /* Android waitlist form.
        No backend yet — opens the visitor's mail client with a prefilled message.
