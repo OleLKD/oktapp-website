@@ -16,19 +16,19 @@
   --border-hi: #27384a;
 
   /* brand */
-  --blue:      #4d96ff;
-  --blue-hi:   #6aa9ff;
-  --blue-dim:  #22406e;
-  --blue-glow: rgba(77,150,255,0.16);
+  --blue:      #4d8dff;
+  --blue-hi:   #6aa1ff;
+  --blue-dim:  #223c6e;
+  --blue-glow: rgba(77,141,255,0.16);
 
   /* split colours */
-  --press:     #e05c5c;
-  --pull:      #5b8de8;
-  --leg:       #58a668;
+  --press:     #ef4444;
+  --pull:      #3b82f6;
+  --leg:       #22c55e;
   --core:      #a67fe8;
-  --cardio:    #d4a843;
-  --green:     #58a668;
-  --green-dim: #16301c;
+  --cardio:    #facc15;
+  --green:     #22c55e;
+  --green-dim: #052a14;
 
   /* type */
   --text:      #eef2f8;
@@ -50,7 +50,7 @@ html {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
@@ -64,7 +64,7 @@ img, svg { display: block; max-width: 100%; }
 
 a { color: var(--blue); }
 
-::selection { background: rgba(77,150,255,0.28); color: #fff; }
+::selection { background: rgba(77,141,255,0.28); color: #fff; }
 
 /* focus ring — visible for keyboard users only */
 :focus-visible {
@@ -325,7 +325,7 @@ a { color: var(--blue); }
 .lang-btn:hover { border-color: var(--border-hi); }
 .lang-btn[aria-pressed="true"] {
   border-color: var(--blue);
-  background: rgba(77,150,255,0.10);
+  background: rgba(77,141,255,0.10);
 }
 
 .lang-btn .flag {
@@ -381,7 +381,7 @@ a { color: var(--blue); }
   color: #fff;
   font-weight: 700;
   border: 1px solid var(--blue);
-  box-shadow: 0 6px 20px rgba(77,150,255,.22);
+  box-shadow: 0 6px 20px rgba(77,141,255,.22);
 }
 .btn-primary:hover { background: var(--blue-hi); transform: translateY(-2px); }
 

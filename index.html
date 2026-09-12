@@ -32,7 +32,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700;9..40,900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/site.css?v=2026-07-26" />
 
   <style>
@@ -54,7 +54,7 @@
       top: -280px; left: 50%;
       transform: translateX(-50%);
       width: 1100px; height: 900px;
-      background: radial-gradient(ellipse at center, rgba(77,150,255,.10) 0%, transparent 68%);
+      background: radial-gradient(ellipse at center, rgba(77,141,255,.10) 0%, transparent 68%);
       pointer-events: none;
     }
     .hero::after {
@@ -71,8 +71,8 @@
       display: inline-flex;
       align-items: center;
       gap: 9px;
-      background: rgba(77,150,255,.08);
-      border: 1px solid rgba(77,150,255,.24);
+      background: rgba(77,141,255,.08);
+      border: 1px solid rgba(77,141,255,.24);
       border-radius: 100px;
       padding: 7px 16px;
       font-size: 12px;
@@ -86,13 +86,13 @@
       width: 7px; height: 7px;
       border-radius: 50%;
       background: var(--blue);
-      box-shadow: 0 0 0 0 rgba(77,150,255,.6);
+      box-shadow: 0 0 0 0 rgba(77,141,255,.6);
       animation: pulse 2.4s infinite;
     }
     @keyframes pulse {
-      0%   { box-shadow: 0 0 0 0 rgba(77,150,255,.55); }
-      70%  { box-shadow: 0 0 0 9px rgba(77,150,255,0); }
-      100% { box-shadow: 0 0 0 0 rgba(77,150,255,0); }
+      0%   { box-shadow: 0 0 0 0 rgba(77,141,255,.55); }
+      70%  { box-shadow: 0 0 0 9px rgba(77,141,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(77,141,255,0); }
     }
 
     .hero-lockup {
@@ -112,7 +112,7 @@
       box-shadow:
         0 1px 0 rgba(255,255,255,.08) inset,
         0 18px 50px rgba(0,0,0,.55),
-        0 0 90px rgba(77,150,255,.10);
+        0 0 90px rgba(77,141,255,.10);
     }
     .hero-mark svg {
       width: 58%; height: 58%;
@@ -191,7 +191,7 @@
     .stat-item:last-child { border-right: none; }
     .stat-number {
       font-size: clamp(26px, 4vw, 36px);
-      font-weight: 900;
+      font-weight: 700;
       letter-spacing: -1.5px;
       line-height: 1;
       margin-bottom: 7px;
@@ -216,7 +216,7 @@
     }
     .section-title {
       font-size: clamp(30px, 5.2vw, 52px);
-      font-weight: 900;
+      font-weight: 700;
       letter-spacing: -1.6px;
       line-height: 1.08;
       margin-bottom: 20px;
@@ -262,11 +262,11 @@
       color: var(--blue);
     }
     .feature-icon svg { width: 21px; height: 21px; }
-    .feature-icon.blue   { background: rgba(77,150,255,.12);  color: #7fb3ff; }
-    .feature-icon.green  { background: rgba(88,166,104,.12);  color: #77c98a; }
-    .feature-icon.gold   { background: rgba(212,168,67,.12);  color: #e0bb63; }
+    .feature-icon.blue   { background: rgba(77,141,255,.12);  color: #7fadff; }
+    .feature-icon.green  { background: rgba(34,197,94,.12);   color: #3ced82; }
+    .feature-icon.gold   { background: rgba(250,204,21,.12);  color: #ffd93c; }
     .feature-icon.purple { background: rgba(166,127,232,.12); color: #bb9bf0; }
-    .feature-icon.red    { background: rgba(224,92,92,.12);   color: #ec8181; }
+    .feature-icon.red    { background: rgba(239,68,68,.12);   color: #f76d6d; }
     .feature-title { font-size: 17px; font-weight: 700; margin-bottom: 9px; letter-spacing: -.2px; }
     .feature-desc  { font-size: 14.5px; color: var(--muted); line-height: 1.65; }
 
@@ -289,7 +289,7 @@
       box-shadow:
         0 0 0 1px rgba(255,255,255,.05),
         0 34px 70px rgba(0,0,0,.6),
-        0 0 120px rgba(77,150,255,.07);
+        0 0 120px rgba(77,141,255,.07);
     }
     .device-screen {
       background: var(--bg-2);
@@ -308,7 +308,7 @@
     }
     .device-screen > * { position: relative; }
 
-    .mockup-title { font-size: 18px; font-weight: 900; letter-spacing: -.3px; }
+    .mockup-title { font-size: 18px; font-weight: 700; letter-spacing: -.3px; }
     .mockup-sub   { font-size: 12px; color: var(--muted); }
 
     .timer-ring {
@@ -349,8 +349,8 @@
       text-align: center;
       color: var(--muted);
     }
-    .incr div.on { background: rgba(77,150,255,.14); border-color: var(--blue); color: var(--text); }
-    .weight-main { font-size: 21px; font-weight: 900; letter-spacing: -.6px; }
+    .incr div.on { background: rgba(77,141,255,.14); border-color: var(--blue); color: var(--text); }
+    .weight-main { font-size: 21px; font-weight: 700; letter-spacing: -.6px; }
     .last-line { text-align: center; font-size: 11.5px; color: #6b9c7c; margin-bottom: 14px; }
     .log-btn {
       background: var(--blue);
@@ -361,7 +361,7 @@
       font-size: 15px;
       color: #fff;
       margin-bottom: 16px;
-      box-shadow: 0 8px 22px rgba(77,150,255,.28);
+      box-shadow: 0 8px 22px rgba(77,141,255,.28);
     }
     .util-row { display: flex; gap: 6px; justify-content: space-between; }
     .util {
@@ -399,10 +399,10 @@
     .intensity {
       width: 30px; height: 30px;
       border-radius: 9px;
-      background: rgba(212,168,67,.13);
-      border: 1px solid rgba(212,168,67,.32);
+      background: rgba(250,204,21,.13);
+      border: 1px solid rgba(250,204,21,.32);
       display: grid; place-items: center;
-      font-size: 12px; font-weight: 700; color: #d4a843;
+      font-size: 12px; font-weight: 700; color: #facc15;
       flex-shrink: 0;
     }
     .splits-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 30px; }
@@ -477,7 +477,7 @@
     }
     .watch-ring-mid { text-align: center; line-height: 1; }
     .watch-count {
-      font-size: 30px; font-weight: 800; color: #fff;
+      font-size: 30px; font-weight: 700; color: #fff;
       letter-spacing: 2px;
       font-variant-numeric: tabular-nums;
     }
@@ -512,7 +512,7 @@
     }
     .check-list .tick {
       width: 22px; height: 22px; border-radius: 50%;
-      background: rgba(88,166,104,.14);
+      background: rgba(34,197,94,.14);
       color: var(--green);
       display: grid; place-items: center;
       flex-shrink: 0;
@@ -621,7 +621,7 @@
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       width: 900px; height: 700px;
-      background: radial-gradient(ellipse, rgba(77,150,255,.09) 0%, transparent 68%);
+      background: radial-gradient(ellipse, rgba(77,141,255,.09) 0%, transparent 68%);
       pointer-events: none;
     }
     .cta-inner { position: relative; z-index: 1; max-width: 620px; margin: 0 auto; }
@@ -634,7 +634,7 @@
       box-shadow: 0 1px 0 rgba(255,255,255,.08) inset, 0 12px 34px rgba(0,0,0,.5);
     }
     .cta-mark svg { width: 58%; height: 58%; color: #eef1f6; }
-    .cta-title { font-size: clamp(28px, 5vw, 46px); font-weight: 900; letter-spacing: -1.4px; margin-bottom: 14px; }
+    .cta-title { font-size: clamp(28px, 5vw, 46px); font-weight: 700; letter-spacing: -1.4px; margin-bottom: 14px; }
     .cta-sub { font-size: 17px; color: var(--text-2); margin-bottom: 34px; }
 
     .notify-form {
@@ -741,7 +741,7 @@
 
   <!-- ══════════  STATS  ══════════ -->
   <div class="stats-bar">
-    <div class="stat-item"><div class="stat-number" data-count="150" data-count-suffix="+">150+</div><div class="stat-label" data-i18n="stats.exercises">Base exercises</div></div>
+    <div class="stat-item"><div class="stat-number" data-count="100" data-count-suffix="+">100+</div><div class="stat-label" data-i18n="stats.exercises">Base exercises</div></div>
     <div class="stat-item"><div class="stat-number" data-count="36">36</div><div class="stat-label" data-i18n="stats.ach">Achievements</div></div>
     <div class="stat-item"><div class="stat-number" data-count="5">5</div><div class="stat-label" data-i18n="stats.splits">Training splits</div></div>
     <div class="stat-item"><div class="stat-number" data-count="0">0</div><div class="stat-label" data-i18n="stats.subs">Subscriptions</div></div>
@@ -782,7 +782,7 @@
       <div class="feature-card reveal">
         <div class="feature-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h2M20 12h2M6 8v8M18 8v8M9 6v12M15 6v12M9 12h6"/></svg></div>
         <div class="feature-title" data-i18n="f6.t">Full exercise library</div>
-        <div class="feature-desc" data-i18n="f6.d">150+ exercises across press, pull, leg, core, and cardio. Filter by movement, muscle group, or equipment.</div>
+        <div class="feature-desc" data-i18n="f6.d">100+ native exercises across press, pull, leg, core, and cardio, plus unlimited custom exercises. Filter by movement, muscle group, or equipment.</div>
       </div>
     </div>
   </section>
@@ -815,7 +815,7 @@
             <div class="timer-ring">
               <svg viewBox="0 0 100 100" aria-hidden="true">
                 <circle cx="50" cy="50" r="45" fill="none" stroke="#1c2836" stroke-width="4"/>
-                <circle cx="50" cy="50" r="45" fill="none" stroke="#4d96ff" stroke-width="4"
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#4d8dff" stroke-width="4"
                         stroke-linecap="round" stroke-dasharray="283" stroke-dashoffset="88"/>
               </svg>
               <span class="timer-number">0:42</span>
