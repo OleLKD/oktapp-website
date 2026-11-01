@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get ØKT</title>
+  <meta name="description" content="Install ØKT, then scan the code from your coach again." />
+  <meta name="theme-color" content="#080b11" />
+  <meta name="robots" content="noindex" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="apple-itunes-app" content="app-id=6775596410" />
+  <link rel="canonical" href="https://oktapp.com/i" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ØKT" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:url" content="https://oktapp.com/i" />
+  <meta property="og:title" content="Get ØKT" />
+  <meta property="og:description" content="Install ØKT, then scan the code from your coach again." />
+  <meta property="og:image" content="https://oktapp.com/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css?v=2026-11-01" />
+
+  <style>
+    .get {
+      max-width: 560px;
+      margin: 0 auto;
+      min-height: 100svh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: calc(var(--nav-h) + 56px) clamp(20px, 5vw, 24px) 72px;
+      text-align: center;
+      position: relative;
+    }
+    .get::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 460px;
+      background: radial-gradient(ellipse, rgba(77,141,255,.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .get > * { position: relative; }
+    .get-title {
+      font-size: clamp(32px, 7vw, 48px);
+      font-weight: 700; letter-spacing: -1.6px; line-height: 1.05;
+      margin-bottom: 18px;
+    }
+    .get p { font-size: 16px; color: var(--text-2); line-height: 1.7; margin-bottom: 14px; }
+    .get .get-update { font-size: 14px; color: var(--muted); margin-top: 22px; }
+    .get .store-row { display: flex; justify-content: center; margin-top: 26px; }
+
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 7px;
+      color: var(--text-2); text-decoration: none;
+      font-size: 14px; font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--text); }
+    @media (max-width: 560px) { .nav-back span { display: none; } }
+  </style>
+</head>
+
+<body data-page="get" data-title-key="i.meta.title" data-desc-key="i.meta.desc">
+
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <nav class="site-nav">
+    <a href="/" class="brand" aria-label="ØKT">
+      <span class="brand-mark" data-mark></span>
+      <img src="assets/logo.png" alt="ØKT" class="brand-word" />
+    </a>
+    <div class="nav-right">
+      <a href="/" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        <span data-i18n="nav.back">Back to ØKT</span>
+      </a>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="okt-drawer"
+              data-i18n-attr="aria-label:drawer.open" aria-label="Open menu">
+        <span class="bars"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main">
+
+  <div class="get">
+    <h1 class="get-title" data-i18n="i.title">Get ØKT</h1>
+    <p data-i18n="i.lead">Your coach shared a training session with you. Install ØKT, then scan the code again.</p>
+    <div class="store-row">
+      <a class="store-btn" href="https://apps.apple.com/us/app/økt/id6775596410" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <span class="store-lines"><span class="store-small" data-i18n="store.badge">Download on the</span><br><span class="store-big">App Store</span></span>
+        </a>
+    </div>
+    <p class="get-update" data-i18n="i.update">Already have ØKT? Update to the latest version, then scan again.</p>
+  </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="brand" aria-label="ØKT">
+          <span class="brand-mark" data-mark></span>
+          <img src="assets/logo.png" alt="ØKT" class="brand-word" />
+        </a>
+        <p class="footer-tag" data-i18n="footer.tag">A premium workout logger built for serious training.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/"                 data-i18n="nav.home">Home</a></li>
+        <li><a href="/#features"        data-i18n="nav.features">Features</a></li>
+        <li><a href="/#watch"           data-i18n="nav.watch">Apple Watch</a></li>
+        <li><a href="/#achievements"    data-i18n="nav.achievements">Achievements</a></li>
+        <li><a href="/#faq"             data-i18n="nav.faq">FAQ</a></li>
+      </ul>
+      <div class="footer-copy" data-i18n="footer.copy">© 2026 ØKT. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- ?v= is a cache buster: bump it in BOTH pages whenever assets change.
+       i18n.js overwrites the HTML copy at runtime, so a stale cached copy
+       silently replaces correct text with old strings. -->
+  <script src="assets/i18n.js?v=2026-11-01"></script>
+  <script src="assets/site.js?v=2026-11-01"></script>
+</body>
+</html>

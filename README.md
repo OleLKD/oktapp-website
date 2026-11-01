@@ -7,6 +7,8 @@ served. Pushing to `main` deploys.
 ```
 index.html          home page (page-local <style> in <head>)
 privacy.html        privacy policy
+i.html              /i — landing page for the session-QR universal link (noindex)
+.well-known/        apple-app-site-association (published thanks to .nojekyll)
 assets/site.css     shared styles
 assets/site.js      language switching, drawer, scroll reveal, FAQ
 assets/i18n.js      EN/NO copy dictionary

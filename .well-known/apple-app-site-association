@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["YU8G4JF2FM.com.olkd.okt"],
+        "components": [
+          { "/": "/i", "?": { "c": "*" }, "comment": "Session QR import link" }
+        ]
+      }
+    ]
+  }
+}

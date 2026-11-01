@@ -195,9 +195,18 @@ window.OKT_STRINGS = {
   "pv.meta.title": { en: "Privacy Policy — ØKT", no: "Personvernerklæring — ØKT" },
   "pv.meta.desc":  { en: "ØKT privacy policy. Your workout data stays on your device.",
                      no: "Personvernerklæring for ØKT. Treningsdataene dine blir på enheten din." },
+  "i.meta.title": { en: "Get ØKT", no: "Last ned ØKT" },
+  "i.meta.desc":  { en: "Install ØKT, then scan the code from your coach again.",
+                    no: "Installer ØKT, og skann koden fra treneren din på nytt." },
+  "i.title":  { en: "Get ØKT", no: "Last ned ØKT" },
+  "i.lead":   { en: "Your coach shared a training session with you. Install ØKT, then scan the code again.",
+                no: "Treneren din har delt en treningsøkt med deg. Installer ØKT, og skann koden på nytt." },
+  "i.update": { en: "Already have ØKT? Update to the latest version, then scan again.",
+                no: "Har du allerede ØKT? Oppdater til nyeste versjon, og skann på nytt." },
+
   "pv.eyebrow":  { en: "Legal", no: "Juridisk" },
   "pv.title":    { en: "Privacy Policy", no: "Personvernerklæring" },
-  "pv.updated":  { en: "Last updated: October 2026", no: "Sist oppdatert: oktober 2026" },
+  "pv.updated":  { en: "Last updated: November 2026", no: "Sist oppdatert: november 2026" },
 
   "pv.sum.title": { en: "The short version", no: "Kortversjonen" },
   "pv.sum.1": { en: "All your workout data is stored locally on your device only",
@@ -282,6 +291,8 @@ window.OKT_STRINGS = {
                 no: "<strong>App Store</strong> — plattform for distribusjon av apper. Informasjon om nedlasting og kjøp håndteres av Apple etter deres egen personvernerklæring." },
   "pv.s5.c": { en: "When you tap the YouTube “Guide” button within the app, you are directed to YouTube in your device's browser or the YouTube app. Any data collected by YouTube during that session is subject to Google's privacy policy, not ours.",
                no: "Når du trykker på YouTube-knappen «Guide» i appen, sendes du til YouTube i nettleseren på enheten din eller i YouTube-appen. Data YouTube samler inn i den forbindelse omfattes av Googles personvernerklæring, ikke vår." },
+  "pv.s5.d": { en: "When you open a session link from your coach (an oktapp.com/i address), that page receives the session code in its web address. Nothing is stored or analysed; the page is served by GitHub Pages, which keeps its normal server logs.",
+               no: "Når du åpner en øktlenke fra treneren din (en oktapp.com/i-adresse), mottar siden øktkoden i nettadressen. Ingenting lagres eller analyseres; siden leveres av GitHub Pages, som fører sine vanlige serverlogger." },
 
   "pv.s6.t": { en: "Children's privacy", no: "Barns personvern" },
   "pv.s6.a": { en: "ØKT is not directed at children under the age of 13. We do not knowingly collect any information from children. Since the app does not collect any personal data from any user, there is no special risk to younger users beyond the general device-local data storage described above.",

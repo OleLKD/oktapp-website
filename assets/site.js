@@ -129,6 +129,12 @@
       { href: '/#achievements',    key: 'nav.achievements' },
       { href: '/#faq',             key: 'nav.faq' },
       { href: 'privacy.html',      key: 'nav.privacy', current: true }
+    ],
+    get: [
+      { href: '/',                 key: 'nav.home' },
+      { href: '/#features',        key: 'nav.features' },
+      { href: '/#watch',           key: 'nav.watch' },
+      { href: 'privacy.html',      key: 'nav.privacy' }
     ]
   };
 
