@@ -293,6 +293,8 @@ window.OKT_STRINGS = {
                no: "Når du trykker på YouTube-knappen «Guide» i appen, sendes du til YouTube i nettleseren på enheten din eller i YouTube-appen. Data YouTube samler inn i den forbindelse omfattes av Googles personvernerklæring, ikke vår." },
   "pv.s5.d": { en: "When you open a session link from your coach (an oktapp.com/i address), that page receives the session code in its web address. Nothing is stored or analysed; the page is served by GitHub Pages, which keeps its normal server logs.",
                no: "Når du åpner en øktlenke fra treneren din (en oktapp.com/i-adresse), mottar siden øktkoden i nettadressen. Ingenting lagres eller analyseres; siden leveres av GitHub Pages, som fører sine vanlige serverlogger." },
+  "pv.s5.e": { en: "The map in the app's menu background is drawn from OpenStreetMap data. Map data © OpenStreetMap contributors, available under the Open Database Licence (ODbL). The map is bundled in the app; nothing is loaded from the internet to show it.",
+               no: "Kartet i menybakgrunnen i appen er tegnet fra data fra OpenStreetMap. Kartdata © OpenStreetMap-bidragsytere, tilgjengelig under Open Database License (ODbL). Kartet er bygget inn i appen; ingenting lastes fra internett for å vise det." },
 
   "pv.s6.t": { en: "Children's privacy", no: "Barns personvern" },
   "pv.s6.a": { en: "ØKT is not directed at children under the age of 13. We do not knowingly collect any information from children. Since the app does not collect any personal data from any user, there is no special risk to younger users beyond the general device-local data storage described above.",
