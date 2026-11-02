@@ -2,7 +2,7 @@
 
 Static site for ØKT, served at [oktapp.com](https://oktapp.com) via GitHub Pages
 (custom domain in `CNAME`). **No build step** — the committed files are what is
-served. Pushing to `main` deploys.
+served, as copied by the deploy workflow (see **Deploy** below).
 
 ```
 index.html          home page (page-local <style> in <head>)
@@ -12,8 +12,24 @@ i.html              /i — landing page for the session-QR universal link (noind
 assets/site.css     shared styles
 assets/site.js      language switching, drawer, scroll reveal, FAQ
 assets/i18n.js      EN/NO copy dictionary
-tools/              dev-only scripts (not served)
+tools/              dev-only scripts, not served (see Deploy)
 ```
+
+## Deploy
+
+Pushing to `main` triggers [`.github/workflows/pages.yml`](.github/workflows/pages.yml),
+which publishes **only** a fixed list of files via GitHub Actions (not a plain
+"serve the whole repo" deploy). `README.md`, `LICENSE`, `tools/` and `.github/`
+are never published. The workflow fails if the published set is missing a
+required file or contains `README.md`/`tools/`.
+
+**Adding a new page or top-level file that should be public?** Add it to the
+copy step in `.github/workflows/pages.yml` — it will not be served otherwise.
+
+## Security
+
+Never commit secrets (API keys, tokens, credentials) — this repository is
+public, and so is its history.
 
 ## Copy and translations
 

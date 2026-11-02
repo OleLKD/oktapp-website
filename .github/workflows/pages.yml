@@ -1,0 +1,95 @@
+name: Deploy Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  pages: write
+  id-token: write
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build _site (only the files GitHub Pages should serve)
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+
+          # Top-level files
+          cp index.html i.html privacy.html robots.txt sitemap.xml site.webmanifest CNAME .nojekyll _site/
+
+          # assets/, excluding assets/.keep
+          mkdir -p _site/assets
+          rsync -a --exclude='.keep' assets/ _site/assets/
+
+          # .well-known/ (hidden directory, kept by .nojekyll + include-hidden-files below)
+          mkdir -p _site/.well-known
+          cp .well-known/apple-app-site-association _site/.well-known/
+
+      - name: Verify _site contents
+        run: |
+          set -euo pipefail
+
+          required=(
+            "_site/index.html"
+            "_site/i.html"
+            "_site/privacy.html"
+            "_site/robots.txt"
+            "_site/sitemap.xml"
+            "_site/site.webmanifest"
+            "_site/CNAME"
+            "_site/.nojekyll"
+            "_site/.well-known/apple-app-site-association"
+          )
+
+          for f in "${required[@]}"; do
+            if [ ! -e "$f" ]; then
+              echo "::error::Missing required file in _site: $f"
+              exit 1
+            fi
+          done
+
+          if [ ! -d "_site/assets" ] || [ -z "$(ls -A _site/assets)" ]; then
+            echo "::error::_site/assets is missing or empty"
+            exit 1
+          fi
+
+          if [ -e "_site/README.md" ]; then
+            echo "::error::README.md must not be published"
+            exit 1
+          fi
+
+          if [ -e "_site/tools" ]; then
+            echo "::error::tools/ must not be published"
+            exit 1
+          fi
+
+          echo "_site contents OK:"
+          find _site -type f | sort
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+          include-hidden-files: true
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
