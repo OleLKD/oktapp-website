@@ -34,6 +34,46 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/site.css?v=2026-11-07" />
+  <style>
+    .hub-cards {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 8px clamp(20px, 5vw, 24px) 88px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .hub-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px 28px;
+    }
+    .hub-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+    }
+    .hub-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .hub-name {
+      font-size: clamp(32px, 5vw, 44px);
+      font-weight: 700; letter-spacing: -1.4px; line-height: 1.05;
+    }
+    .hub-line { color: var(--text-2); flex: 1; }
+    @media (max-width: 720px) {
+      .hub-cards { grid-template-columns: 1fr; padding-bottom: 64px; }
+      .hub-card { padding: 26px 22px; }
+    }
+  </style>
 </head>
 
 <body data-page="hub" data-title-key="hub.meta.title" data-desc-key="hub.meta.desc">
@@ -61,12 +101,41 @@
 
   <main id="main">
 
-  <!-- placeholder hub: replaced by the real hub in the next commit -->
+  <!-- ══════════  HERO  ══════════ -->
   <header class="landing-hero">
+    <p class="landing-eyebrow" data-i18n="hub.eyebrow">ØKT</p>
     <h1 class="landing-title" data-i18n="hub.title">Training apps for athletes and coaches</h1>
-    <p><a class="text-link" href="/okt/" data-i18n="hub.okt.link">Learn more about ØKT</a></p>
-    <p><a class="text-link" href="/pt/" data-i18n="hub.pt.link">Learn more about ØKT PT</a></p>
+    <p class="landing-sub" data-i18n="hub.sub">ØKT is for the person lifting. ØKT PT is for the person planning the week.</p>
   </header>
+
+  <!-- ══════════  THE TWO APPS  ══════════ -->
+  <div class="hub-cards">
+
+    <section class="hub-card" aria-labelledby="hub-okt-name">
+      <div class="hub-card-top">
+        <span class="hub-tag" data-i18n="hub.okt.tag">For athletes</span>
+        <span class="status-pill status-pill--live" data-i18n="hub.okt.pill">Available on iOS</span>
+      </div>
+      <h2 class="hub-name" id="hub-okt-name">ØKT</h2>
+      <p class="hub-line" data-i18n="hub.okt.line">A premium workout logger built for serious training. 100+ base exercises, Apple Watch support, no subscription.</p>
+      <a class="store-btn" href="https://apps.apple.com/us/app/økt/id6775596410" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <span class="store-lines"><span class="store-small" data-i18n="store.badge">Download on the</span><br><span class="store-big">App Store</span></span>
+      </a>
+      <a class="text-link" href="/okt/" data-i18n="hub.okt.link">Learn more about ØKT</a>
+    </section>
+
+    <section class="hub-card" aria-labelledby="hub-pt-name">
+      <div class="hub-card-top">
+        <span class="hub-tag" data-i18n="hub.pt.tag">For coaches</span>
+        <span class="status-pill" data-i18n="hub.pt.pill">Coming soon</span>
+      </div>
+      <h2 class="hub-name" id="hub-pt-name">ØKT PT</h2>
+      <p class="hub-line" data-i18n="hub.pt.line">A coach's daily workspace: roster, schedule, check-ins, programs and insights.</p>
+      <a class="text-link" href="/pt/" data-i18n="hub.pt.link">Learn more about ØKT PT</a>
+    </section>
+
+  </div>
 
   </main>
 
@@ -95,5 +164,14 @@
        silently replaces correct text with old strings. -->
   <script src="/assets/i18n.js?v=2026-11-07"></script>
   <script src="/assets/site.js?v=2026-11-07"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ØKT",
+    "url": "https://oktapp.com/"
+  }
+  </script>
+
 </body>
 </html>
