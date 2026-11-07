@@ -452,6 +452,105 @@ a { color: var(--blue); }
 
 .footer-copy { font-size: 12px; color: var(--faint); }
 
+/* ─────────────────────────  APP SWITCHER + LANDING PAGES  ─────────────────────────
+   Additive block: shared by the hub (/), /okt/ and /pt/.  */
+
+.app-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  background: rgba(255,255,255,0.02);
+}
+.app-switch a {
+  display: block;
+  padding: 6px 14px;
+  border-radius: 100px;
+  color: var(--text-2);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .2s, background .2s;
+}
+.app-switch a:hover { color: var(--text); }
+.app-switch a[aria-current="page"] {
+  background: rgba(77,141,255,.14);
+  color: var(--blue-hi);
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 5px 13px;
+  border-radius: 100px;
+  border: 1px solid var(--border-hi);
+  background: rgba(255,255,255,.03);
+  color: var(--text-2);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .3px;
+}
+.status-pill--live {
+  border-color: rgba(77,141,255,.3);
+  background: rgba(77,141,255,.08);
+  color: var(--blue-hi);
+}
+
+.landing-hero {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: calc(var(--nav-h) + 84px) clamp(20px, 5vw, 24px) 48px;
+  position: relative;
+}
+.landing-hero::before {
+  content: '';
+  position: absolute;
+  top: -140px; left: 50%;
+  transform: translateX(-50%);
+  width: 900px; height: 520px;
+  max-width: 100vw;
+  background: radial-gradient(ellipse, rgba(77,141,255,.09) 0%, transparent 70%);
+  pointer-events: none;
+}
+.landing-hero > * { position: relative; }
+.landing-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 2.2px;
+  text-transform: uppercase; color: var(--blue); margin-bottom: 14px;
+}
+.landing-title {
+  font-size: clamp(32px, 6vw, 56px);
+  font-weight: 700; letter-spacing: -1.8px; line-height: 1.05;
+  margin: 16px 0 16px;
+}
+.landing-sub {
+  max-width: 600px;
+  font-size: clamp(16px, 2.2vw, 19px);
+  color: var(--text-2);
+}
+
+.landing-section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 36px clamp(20px, 5vw, 24px);
+}
+.landing-h2 {
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 700; letter-spacing: -1px; line-height: 1.15;
+  margin-bottom: 12px;
+}
+.text-link {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+.text-link:hover { color: var(--blue-hi); text-decoration: underline; }
+
+@media (max-width: 400px) {
+  .app-switch { display: none; }
+}
+
 /* ─────────────────────────  REVEAL  ───────────────────────── */
 
 .reveal {

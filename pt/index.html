@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ØKT PT — The coach's workspace for ØKT</title>
+  <meta name="description" content="ØKT PT is the coach-side companion to ØKT: roster, schedule, check-ins, programs and insights in one app. Your data stays on your device." />
+  <meta name="theme-color" content="#080b11" />
+  <link rel="canonical" href="https://oktapp.com/pt/" />
+
+  <!-- icons -->
+  <link rel="icon" type="image/svg+xml" href="/assets/icon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ØKT PT" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:url" content="https://oktapp.com/pt/" />
+  <meta property="og:title" content="ØKT PT — The coach's workspace for ØKT" />
+  <meta property="og:description" content="ØKT PT is the coach-side companion to ØKT: roster, schedule, check-ins, programs and insights in one app. Your data stays on your device." />
+  <meta property="og:image" content="https://oktapp.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://oktapp.com/assets/og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/site.css?v=2026-11-07" />
+
+  <style>
+    .tab-grid {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .tab-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 22px 24px;
+    }
+    .tab-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .tab-name {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -.4px;
+      margin-bottom: 6px;
+    }
+    .tab-body { font-size: 15px; color: var(--text-2); }
+
+    .info-panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    .info-panel p { color: var(--text-2); max-width: 620px; margin-bottom: 16px; }
+    .info-panel p:last-child { margin-bottom: 0; }
+    .landing-section + .landing-section { padding-top: 12px; }
+    .page-end { padding-bottom: 72px; }
+  </style>
+</head>
+
+<body data-page="pt" data-title-key="ptapp.meta.title" data-desc-key="ptapp.meta.desc">
+
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <!-- ══════════  NAV  ══════════ -->
+  <nav class="site-nav">
+    <a href="/" class="brand" aria-label="ØKT">
+      <span class="brand-mark" data-mark></span>
+      <img src="/assets/logo.png" alt="ØKT" class="brand-word" />
+    </a>
+
+    <div class="nav-right">
+      <div class="app-switch" role="group" data-i18n-attr="aria-label:nav.apps" aria-label="Apps">
+        <a href="/okt/" data-i18n="nav.appokt">ØKT</a>
+        <a href="/pt/" aria-current="page" data-i18n="nav.apppt">ØKT PT</a>
+      </div>
+      <button class="hamburger" type="button" aria-expanded="false" aria-controls="okt-drawer"
+              data-i18n-attr="aria-label:drawer.open" aria-label="Open menu">
+        <span class="bars"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main">
+
+  <!-- ══════════  HERO  ══════════ -->
+  <header class="landing-hero">
+    <span class="status-pill" data-i18n="ptapp.pill">Coming soon</span>
+    <h1 class="landing-title" data-i18n="ptapp.title">The coach's workspace for ØKT</h1>
+    <p class="landing-sub" data-i18n="ptapp.sub">Roster, schedule, check-ins, programs and insights in one app. Built to sit alongside ØKT.</p>
+  </header>
+
+  <!-- ══════════  FIVE TABS  ══════════ -->
+  <section class="landing-section" aria-labelledby="pt-tabs-title">
+    <h2 class="landing-h2" id="pt-tabs-title" data-i18n="ptapp.tabs.title">Five tabs. One daily workspace.</h2>
+    <ul class="tab-grid">
+      <li class="tab-card">
+        <p class="tab-num" aria-hidden="true">01</p>
+        <h3 class="tab-name" data-i18n="ptapp.tab1.name">Roster</h3>
+        <p class="tab-body" data-i18n="ptapp.tab1.body">See every client at a glance, and who needs attention.</p>
+      </li>
+      <li class="tab-card">
+        <p class="tab-num" aria-hidden="true">02</p>
+        <h3 class="tab-name" data-i18n="ptapp.tab2.name">Schedule</h3>
+        <p class="tab-body" data-i18n="ptapp.tab2.body">Plan sessions across day and month views, and spot double-bookings.</p>
+      </li>
+      <li class="tab-card">
+        <p class="tab-num" aria-hidden="true">03</p>
+        <h3 class="tab-name" data-i18n="ptapp.tab3.name">Inbox</h3>
+        <p class="tab-body" data-i18n="ptapp.tab3.body">Triage your clients' weekly check-ins.</p>
+      </li>
+      <li class="tab-card">
+        <p class="tab-num" aria-hidden="true">04</p>
+        <h3 class="tab-name" data-i18n="ptapp.tab4.name">Programs</h3>
+        <p class="tab-body" data-i18n="ptapp.tab4.body">Build training templates from an exercise library.</p>
+      </li>
+      <li class="tab-card">
+        <p class="tab-num" aria-hidden="true">05</p>
+        <h3 class="tab-name" data-i18n="ptapp.tab5.name">Insights</h3>
+        <p class="tab-body" data-i18n="ptapp.tab5.body">Follow adherence and see which clients need attention.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ══════════  DATA  ══════════ -->
+  <section class="landing-section" aria-labelledby="pt-data-title">
+    <div class="info-panel">
+      <h2 class="landing-h2" id="pt-data-title" data-i18n="ptapp.data.title">Your data stays on your device.</h2>
+      <p data-i18n="ptapp.data.body">ØKT PT stores your clients, schedule and programs on your device. There is no ØKT PT account and no server.</p>
+      <p><a class="text-link" href="/pt/privacy" data-i18n="ptapp.data.link">Read the privacy policy</a></p>
+    </div>
+  </section>
+
+  <!-- ══════════  AVAILABILITY  ══════════ -->
+  <section class="landing-section page-end" aria-labelledby="pt-avail-title">
+    <div class="info-panel">
+      <h2 class="landing-h2" id="pt-avail-title" data-i18n="ptapp.avail.title">Not available yet.</h2>
+      <p data-i18n="ptapp.avail.body">ØKT PT isn't in the App Store yet. In the meantime, see ØKT for athletes.</p>
+      <p><a class="text-link" href="/okt/" data-i18n="ptapp.avail.link">See ØKT for athletes</a></p>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ══════════  FOOTER  ══════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="brand" aria-label="ØKT">
+          <span class="brand-mark" data-mark></span>
+          <img src="/assets/logo.png" alt="ØKT" class="brand-word" />
+        </a>
+        <p class="footer-tag" data-i18n="footer.tag">A premium workout logger built for serious training.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/okt/"           data-i18n="nav.appokt">ØKT</a></li>
+        <li><a href="/pt/"            data-i18n="nav.apppt">ØKT PT</a></li>
+        <li><a href="/privacy.html"   data-i18n="nav.pvokt">Privacy policy - ØKT</a></li>
+        <li><a href="/pt/privacy"     data-i18n="nav.pvpt">Privacy policy - ØKT PT</a></li>
+      </ul>
+      <div class="footer-copy" data-i18n="footer.copy">© 2026 ØKT. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- ?v= is a cache buster: bump it in ALL pages whenever assets change.
+       i18n.js overwrites the HTML copy at runtime, so a stale cached copy
+       silently replaces correct text with old strings. -->
+  <script src="/assets/i18n.js?v=2026-11-07"></script>
+  <script src="/assets/site.js?v=2026-11-07"></script>
+</body>
+</html>

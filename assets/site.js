@@ -134,6 +134,12 @@
       { href: '/',                 key: 'nav.home' },
       { href: '/pt/privacy',       key: 'nav.privacy', current: true }
     ],
+    pt: [
+      { href: '/okt/',             key: 'nav.appokt' },
+      { href: '/pt/',              key: 'nav.apppt', current: true },
+      { href: '/privacy.html',     key: 'nav.pvokt' },
+      { href: '/pt/privacy',       key: 'nav.pvpt' }
+    ],
     get: [
       { href: '/',                 key: 'nav.home' },
       { href: '/#features',        key: 'nav.features' },
@@ -181,8 +187,9 @@
           '<button class="lang-btn" type="button" data-lang="no" aria-pressed="false" aria-label="Norsk">' +
             '<span class="flag">' + FLAG_NO + '</span></button>' +
         '</div>' +
-        '<a class="drawer-cta" href="' + (page === 'home' ? '#download' : '/#download') + '" ' +
-          'data-i18n="drawer.cta"></a>' +
+        (page === 'pt' ? '' :
+          '<a class="drawer-cta" href="' + (page === 'home' ? '#download' : '/#download') + '" ' +
+          'data-i18n="drawer.cta"></a>') +
       '</div>' +
       '<div class="drawer-foot" data-i18n="drawer.foot"></div>';
 

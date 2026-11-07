@@ -17,6 +17,11 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://oktapp.com/pt/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://oktapp.com/pt/privacy</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://oktapp.com/pt/privacy?lang=en"/>
     <xhtml:link rel="alternate" hreflang="nb" href="https://oktapp.com/pt/privacy?lang=no"/>
