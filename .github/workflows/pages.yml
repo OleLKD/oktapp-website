@@ -32,6 +32,10 @@ jobs:
           # Top-level files
           cp index.html i.html privacy.html robots.txt sitemap.xml site.webmanifest CNAME .nojekyll _site/
 
+          # PT app pages
+          mkdir -p _site/pt
+          cp pt/privacy.html _site/pt/
+
           # assets/, excluding assets/.keep
           mkdir -p _site/assets
           rsync -a --exclude='.keep' assets/ _site/assets/
@@ -48,6 +52,7 @@ jobs:
             "_site/index.html"
             "_site/i.html"
             "_site/privacy.html"
+            "_site/pt/privacy.html"
             "_site/robots.txt"
             "_site/sitemap.xml"
             "_site/site.webmanifest"

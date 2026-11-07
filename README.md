@@ -7,6 +7,7 @@ served, as copied by the deploy workflow (see **Deploy** below).
 ```
 index.html          home page (page-local <style> in <head>)
 privacy.html        privacy policy
+pt/privacy.html      /pt/privacy — privacy policy for the ØKT PT (coach) app
 i.html              /i — landing page for the session-QR universal link (noindex)
 .well-known/        apple-app-site-association (published thanks to .nojekyll)
 assets/site.css     shared styles

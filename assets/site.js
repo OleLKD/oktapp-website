@@ -130,6 +130,10 @@
       { href: '/#faq',             key: 'nav.faq' },
       { href: 'privacy.html',      key: 'nav.privacy', current: true }
     ],
+    ptprivacy: [
+      { href: '/',                 key: 'nav.home' },
+      { href: '/pt/privacy',       key: 'nav.privacy', current: true }
+    ],
     get: [
       { href: '/',                 key: 'nav.home' },
       { href: '/#features',        key: 'nav.features' },
