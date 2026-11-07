@@ -26,7 +26,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
-const PAGES = ['index.html', 'privacy.html', 'i.html', 'pt/privacy.html', 'pt/index.html'];
+const PAGES = ['index.html', 'privacy.html', 'i.html', 'pt/privacy.html', 'pt/index.html', 'okt/index.html'];
 
 /* ── load the dictionary ─────────────────────────────────── */
 

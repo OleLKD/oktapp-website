@@ -32,6 +32,10 @@ jobs:
           # Top-level files
           cp index.html i.html privacy.html robots.txt sitemap.xml site.webmanifest CNAME .nojekyll _site/
 
+          # consumer app page
+          mkdir -p _site/okt
+          cp okt/index.html _site/okt/
+
           # PT app pages
           mkdir -p _site/pt
           cp pt/index.html pt/privacy.html _site/pt/
@@ -50,6 +54,7 @@ jobs:
 
           required=(
             "_site/index.html"
+            "_site/okt/index.html"
             "_site/i.html"
             "_site/privacy.html"
             "_site/pt/index.html"

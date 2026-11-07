@@ -12,6 +12,24 @@
   var STORE_KEY = 'okt-lang';
   var lang = 'en';
 
+  /* ── old deep links ──────────────────────────────────────
+     The consumer page used to live at "/". Old links such as /#features
+     (and the "/#..." links on /i) now land on the hub, so forward any
+     hash that names a section of /okt/ before anything else runs.
+     Hub ids are all prefixed "hub-", so they can never collide. */
+
+  var OKT_SECTION_IDS = ['features', 'session', 'log', 'watch', 'achievements',
+                         'privacy-teaser', 'faq', 'download', 'notify'];
+
+  (function forwardOldAnchors() {
+    var body = document.body;
+    if (!body || body.getAttribute('data-page') !== 'hub') return;
+    var id = window.location.hash.replace(/^#/, '');
+    try { id = decodeURIComponent(id); } catch (e) {}
+    if (OKT_SECTION_IDS.indexOf(id) === -1) return;
+    window.location.replace('/okt/' + window.location.search + window.location.hash);
+  })();
+
   /* ── flags ───────────────────────────────────────────── */
 
   var FLAG_GB =
@@ -113,14 +131,22 @@
   /* ── drawer ──────────────────────────────────────────── */
 
   var LINKS = {
-    home: [
+    hub: [
+      { href: '/okt/',             key: 'nav.appokt' },
+      { href: '/pt/',              key: 'nav.apppt' },
+      { href: '/privacy.html',     key: 'nav.pvokt' },
+      { href: '/pt/privacy',       key: 'nav.pvpt' }
+    ],
+    okt: [
       { href: '#features',     key: 'nav.features' },
       { href: '#session',      key: 'nav.session' },
       { href: '#log',          key: 'nav.history' },
       { href: '#watch',        key: 'nav.watch' },
       { href: '#achievements', key: 'nav.achievements' },
       { href: '#faq',          key: 'nav.faq' },
-      { href: 'privacy.html',  key: 'nav.privacy' }
+      { href: '/okt/',         key: 'nav.appokt', current: true },
+      { href: '/pt/',          key: 'nav.apppt' },
+      { href: '/privacy.html', key: 'nav.privacy' }
     ],
     privacy: [
       { href: '/',                 key: 'nav.home' },
@@ -153,8 +179,8 @@
              '<polyline points="9 18 15 12 9 6"/></svg>';
 
   function buildDrawer() {
-    var page = document.body.getAttribute('data-page') || 'home';
-    var links = LINKS[page] || LINKS.home;
+    var page = document.body.getAttribute('data-page') || 'okt';
+    var links = LINKS[page] || LINKS.okt;
 
     var scrim = document.createElement('div');
     scrim.className = 'drawer-scrim';
@@ -188,7 +214,7 @@
             '<span class="flag">' + FLAG_NO + '</span></button>' +
         '</div>' +
         (page === 'pt' ? '' :
-          '<a class="drawer-cta" href="' + (page === 'home' ? '#download' : '/#download') + '" ' +
+          '<a class="drawer-cta" href="' + (page === 'okt' ? '#download' : '/okt/#download') + '" ' +
           'data-i18n="drawer.cta"></a>') +
       '</div>' +
       '<div class="drawer-foot" data-i18n="drawer.foot"></div>';

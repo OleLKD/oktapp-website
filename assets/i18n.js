@@ -503,5 +503,15 @@ window.OKT_STRINGS = {
   "ptapp.avail.title":{ en: "Not available yet.",      no: "Ikke tilgjengelig ennå." },
   "ptapp.avail.body": { en: "ØKT PT isn't in the App Store yet. In the meantime, see ØKT for athletes.",
                         no: "ØKT PT er ikke i App Store ennå. I mellomtiden kan du se ØKT for utøvere." },
-  "ptapp.avail.link": { en: "See ØKT for athletes",    no: "Se ØKT for utøvere" }
+  "ptapp.avail.link": { en: "See ØKT for athletes",    no: "Se ØKT for utøvere" },
+
+  /* ─── hub (/) ─── */
+  "hub.meta.title": { en: "ØKT — Training apps for athletes and coaches",
+                      no: "ØKT — Treningsapper for utøvere og trenere" },
+  "hub.meta.desc":  { en: "ØKT helps you log your training. ØKT PT is a companion app for personal trainers and coaches, coming soon.",
+                      no: "ØKT hjelper deg å logge treningen. ØKT PT er en følgeapp for personlige trenere og coacher, kommer snart." },
+  "hub.title":      { en: "Training apps for athletes and coaches",
+                      no: "Treningsapper for utøvere og trenere" },
+  "hub.okt.link":   { en: "Learn more about ØKT",    no: "Les mer om ØKT" },
+  "hub.pt.link":    { en: "Learn more about ØKT PT", no: "Les mer om ØKT PT" }
 };
