@@ -154,11 +154,15 @@
       { href: '/#watch',           key: 'nav.watch' },
       { href: '/#achievements',    key: 'nav.achievements' },
       { href: '/#faq',             key: 'nav.faq' },
-      { href: 'privacy.html',      key: 'nav.privacy', current: true }
+      { href: 'privacy.html',      key: 'nav.privacy', current: true },
+      { href: '/okt/',             key: 'nav.appokt' },
+      { href: '/pt/',              key: 'nav.apppt' }
     ],
     ptprivacy: [
       { href: '/',                 key: 'nav.home' },
-      { href: '/pt/privacy',       key: 'nav.privacy', current: true }
+      { href: '/pt/privacy',       key: 'nav.privacy', current: true },
+      { href: '/okt/',             key: 'nav.appokt' },
+      { href: '/pt/',              key: 'nav.apppt' }
     ],
     pt: [
       { href: '/okt/',             key: 'nav.appokt' },
