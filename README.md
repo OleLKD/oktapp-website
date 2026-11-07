@@ -5,16 +5,33 @@ Static site for ØKT, served at [oktapp.com](https://oktapp.com) via GitHub Page
 served, as copied by the deploy workflow (see **Deploy** below).
 
 ```
-index.html          home page (page-local <style> in <head>)
-privacy.html        privacy policy
-pt/privacy.html      /pt/privacy — privacy policy for the ØKT PT (coach) app
+index.html          hub at /  (links to the two apps)
+okt/index.html      /okt/ — ØKT consumer app page (page-local <style> in <head>)
+pt/index.html       /pt/ — ØKT PT (coach app) page
+privacy.html        /privacy — privacy policy for ØKT
+pt/privacy.html     /pt/privacy — privacy policy for ØKT PT
 i.html              /i — landing page for the session-QR universal link (noindex)
 .well-known/        apple-app-site-association (published thanks to .nojekyll)
 assets/site.css     shared styles
-assets/site.js      language switching, drawer, scroll reveal, FAQ
+assets/site.js      language switching, drawer, scroll reveal, FAQ, old-anchor shim
 assets/i18n.js      EN/NO copy dictionary
 tools/              dev-only scripts, not served (see Deploy)
 ```
+
+### URL map
+
+| URL | File | Notes |
+|---|---|---|
+| `/` | `index.html` | Hub. Old deep links such as `/#features` are forwarded to `/okt/#features` by a shim in `site.js` (hub only). |
+| `/okt/` | `okt/index.html` | ØKT for athletes (the former home page). |
+| `/pt/` | `pt/index.html` | ØKT PT for coaches. Coming soon, no store link yet. |
+| `/privacy`, `/privacy.html` | `privacy.html` | ØKT privacy policy. |
+| `/pt/privacy` | `pt/privacy.html` | ØKT PT privacy policy. |
+| `/i` | `i.html` | Universal-link landing page. **Must not move or redirect** — the AASA file claims only `/i`. |
+
+New and moved pages use root-relative paths (`/assets/...`) because they live in
+subfolders. Hub element ids are prefixed `hub-` so they never collide with the
+section ids on `/okt/` that the shim forwards.
 
 ## Deploy
 
@@ -55,17 +72,26 @@ node tools/check-fallbacks.mjs            # exits 1 on any drift
 node tools/check-fallbacks.mjs --report   # full per-key classification table
 ```
 
-Run it after editing `assets/i18n.js` or either HTML file. It compares every
+Run it after editing `assets/i18n.js` or any HTML page. It compares every
 fallback, i18n-driven attribute and `<head>` meta value against the English
 dictionary and prints a have/want diff for anything out of sync. Requires only
 Node (no dependencies, nothing installed).
 
 If it fails, **fix the HTML, not the dictionary.**
 
+### Checking the footer
+
+```bash
+node tools/check-footer.mjs               # exits 1 if footer links differ
+```
+
+The footer link list is hand-duplicated on the hub, `/okt/`, `/pt/` and both
+privacy pages and must be identical. `i.html` is deliberately excluded.
+
 ### Cache busting — bump `?v=` when you change an asset
 
 `site.css`, `site.js` and `i18n.js` are loaded with a `?v=<date>` query string
-in **both** `index.html` and `privacy.html`. GitHub Pages serves them with
+in **every** HTML page. GitHub Pages serves them with
 `Cache-Control: max-age=600`, so without it a returning visitor keeps a stale
 copy for up to ten minutes after a deploy.
 
@@ -75,5 +101,6 @@ old strings**. The page ships the right text, then JS puts the wrong text back.
 Scrapers and `curl` still see the correct fallback, so the bug is invisible to
 any check that does not run JS.
 
-**After changing any file in `assets/`, bump `?v=` to the current date in both
-HTML files.** Keep the value identical across all three tags and both pages.
+**After changing any file in `assets/`, bump `?v=` in all pages** (hub, `/okt/`,
+`/pt/`, both privacy pages and `i.html`). Keep the value identical across all
+three tags on every page.

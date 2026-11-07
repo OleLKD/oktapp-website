@@ -8,7 +8,8 @@
    visitors actually see, so it must stay identical to the
    English value in assets/i18n.js.
 
-   This script compares, for index.html and privacy.html:
+   This script compares, for every page in PAGES below (hub, /okt/, /pt/,
+   both privacy pages and /i):
      · [data-i18n]        inner HTML  vs  S[key].en   (HTML kept)
      · [data-i18n-attr]   attribute   vs  S[key].en   (tags stripped)
      · <title> / description / og:title / og:description
